@@ -15,20 +15,14 @@ from singleproduct import *
 app = Flask(__name__)       #Initialze flask constructor
 app.secret_key = "abc" 
 
-cred = credentials.Certificate("cdeal-f772f-firebase-adminsdk-1h6c0-f0e0b99461.json")
+cred = credentials.Certificate("your file here")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 
 #Add your own details
 config = {
- 'apiKey': "AIzaSyD3I1oY3Ykv2ZJXeHHz_xclmjJGfYjT0Pk",
-  'authDomain': "cdeal-f772f.firebaseapp.com",
-  'projectId': "cdeal-f772f",
-  'storageBucket': "cdeal-f772f.appspot.com",
-  'messagingSenderId': "754250424363",
-  'appId': "1:754250424363:web:0103a3a2368a5bd2f2ca6e",
-"databaseURL": "https://cdeal-f772f-default-rtdb.firebaseio.com/"
+#your cred here
 }
 
 #initialize firebase
