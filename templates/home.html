@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CDeal - A Website for Smart Shoppers  </title>
+    <link rel="stylesheet" href="static/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="nav-wrapper">
+       <div class="grad-bar"></div>
+       <nav class="navbar">
+         <img src="/static/logo.png" alt="Company Logo">
+         <div class="menu-toggle" id="mobile-menu">
+           <span class="bar"></span>
+           <span class="bar"></span>
+           <span class="bar"></span>
+         </div>
+         <ul class="nav no-search">
+       
+          
+           
+           <li class="nav-item"><a href="/">Home</a></li>
+           <li class="nav-item"><a href="/profile">Dashboard</a></li>
+       
+         </ul>
+       </nav>
+       </div>
+       <section class="headline">
+        <br><br><br> <br><br><br>
+         <h1 id="typed"class="typed"></h1>
+         <div class="subheading">CDEAL is One stop platform for Smart shoppers !!</div>
+         <div class='search_con'>
+          
+               <form action ="javascript:route1()" class="input_con">
+                 <input type="text" placeholder='Search for Any Product...' spellCheck="False" id="queryFind"/>
+                 <span id="clearBtn"><i class="bi bi-x-lg"></i></span>
+                 <span class='h-line'></span>
+                
+                 <span><i id="myroute"class="bi bi-search"></i></span>
+                   </a>
+               </form>
+             </div>
+         
+       </section>
+       
+       <section class="features">
+         <div class="feature-container">
+           <img src="/static/2.png" alt="Flexbox Feature">
+           <h2>Compare Prices !!</h2>
+         <p>Cdeal provide users to shop across different site and find best deal by comparing prices with sellers like amazon and snapdeal</p>        </div>
+         <div class="feature-container">
+           <img src="/static/3.png" alt="Flexbox Feature">
+           <h2>Get Notified !!</h2>
+           <p>Set reminder for your favourite product and get a notifcation whenver the prices drops!</p>
+         </div>
+         <div class="feature-container">
+           <img src="/static/4.png" alt="Flexbox Feature">
+           <h2>Be a Smart Shopper !!</h2>
+           <p>Easily manage your shopping bucket with smart dashboard , manage your profile and see your shopping History</p>
+         </div>
+
+       </section>
+       <br>
+       <div class="footer"> Made with ❤️ Team Heisenberg</div>
+       <br>
+     </div>
+  
+
+<div class="loading-overlay">
+ 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+ <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_x2lzmtdl.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
+  
+   <center>  <h3 style="color: white;">Finding Best Deals & offers For You... </h3></center>
+ 
+ 
+ </div>
+     
+<script>
+let overlay = document.getElementsByClassName('loading-overlay')[0]
+
+
+
+document.getElementById('myroute')
+  .addEventListener('click', route1)
+
+ 
+
+  function route1() {
+    if(inputArea.value!=""){
+    overlay.classList.toggle('is-active')
+    route2();}
+  }
+  function route2(){
+    const inputArea = document.getElementById("queryFind");
+    const route=inputArea.value.replaceAll(" ", "+");
+    location.href = "/s?search="+route;
+  }
+  $('.menu-toggle').click(function(){
+     $(".nav").toggleClass("mobile-nav");
+     $(this).toggleClass("is-active");
+  });
+  const clearBtn = document.getElementById("clearBtn");
+  const inputArea = document.getElementById("queryFind");
+  
+  clearBtn.addEventListener("click", clear)
+  
+  function clear(){
+    inputArea.value = "";
+  }
+      $("#typed").typed({
+        strings: ["Save Money...", "Compare prices...", "Get Notified..."],
+        typeSpeed: 100,
+        startDelay: 0,
+        backSpeed: 60,
+        backDelay: 2000,
+        loop: true,
+        cursorChar: "|",
+        contentType: 'html'
+      });</script>
+  </body>
+</html>

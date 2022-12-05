@@ -1,0 +1,18 @@
+flask
+selelium webdrivers
+html css js
+beautiful bs4
+pyrebase -> data base ( no sql firebase)
+firebase_admin 
+
+
+
+file structure
+
+
+1)folder ->static -> css img
+2) folder-> templates-> html
+
+jinja 2 {{}}
+
+3) .py 

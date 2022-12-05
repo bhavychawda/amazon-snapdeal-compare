@@ -1,0 +1,67 @@
+<!doctype html>
+<title>CDeal - A Website for Smart Shoppers  </title>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/dashboard.css">  
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+    <style>
+        .checked {
+          color: orange;
+        }
+        </style>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>Dashboard</header>
+      <a href="/profile" class="active">
+        <i class="fa fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="/history">
+        <i class="fas fa-history"></i>
+        <span>History</span>
+      </a>
+      <a href="/">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/logout">
+        <i class="fa fa-sign-out"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  
+<h1 style=" text-align: center; padding-top: 5rem;">Hi There, Welcome 👋 </h1>
+<br>
+
+
+<div class="wrapper">
+  <div class="profilecard" style="padding-top: 0;">
+    <img src="/static/profile.png" alt="John" class="profileimg" >
+    <h1>{{profile["name"]}}</h1>
+    <h3 style="padding-bottom: 2%;">{{profile["email"]}}</h3>
+   
+  
+  </div>
+  </div>
+</div>
+
+
+      </body>
+
+</html>
+    
+
+</div>

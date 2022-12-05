@@ -1,0 +1,107 @@
+<!doctype html>
+<title>CDeal - A Website for Smart Shoppers  </title>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/dashboard.css">  
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+    <style>
+        .checked {
+          color: orange;
+        }
+        </style>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>Dashboard</header>
+      <a href="/profile" >
+        <i class="fa fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="/history" class="active">
+        <i class="fas fa-history"></i>
+        <span>History</span>
+      </a>
+      <a href="/">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/logout">
+        <i class="fa fa-sign-out"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+<h1 style="text-align: center; padding-top: 5rem;">My History</h1>
+        {% for item in my_list %}
+       
+        <div class="article-contener">
+          <ul class="groups">
+            <li>
+              <div class="card">
+                <div class="image-session">
+                    {% set myimage =item["image"] %}
+           
+                  <span class="image" style="background-image: url({{myimage}});"></span>
+                </div>
+                <div class="meta-sission">
+                  
+                  <div class="body">
+                    <h3 class="title">{{item["title"]}}</h2>
+                        
+                        <div class="myprice">Rs. 
+                            
+                        
+                            {{item["price"]}}</div>
+                      
+                </div>
+                <h4>    Reviews & Ratings</h4>
+                <div class="views">
+                  
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                   
+                </div>
+                  <div class="footer">
+                 
+                    {% set mylink =item["link"] %}
+                    {% set mytitle =item["title"] %}
+                    {% set myprice =item["price"] %}
+                    
+                    <input type="hidden"  id="d1" value="{{ data }}">
+                    <input type="hidden"  id="d2" value="{{ mytitle }}">
+                    <input type="hidden"  id="d3" value="{{ myprice}}">
+                    <input type="hidden"  id="d4" value="{{ myimage }}">
+
+                     <a href="{{mylink}}" class="button">Buy Now →</a> 
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+        {% endfor %}
+
+</div>
+
+
+      </body>
+
+</html>
+    
+
+</div>

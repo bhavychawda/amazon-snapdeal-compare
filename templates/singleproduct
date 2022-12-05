@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDeal - A Website for Smart Shoppers  </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="singleproduct.css" />
+  </head>
+
+  <body>
+       <div class="heading">
+       <h1 class="head">Compare Prices & Find Best Deal </h1>
+       <div class="toggle">
+              <h2 class="notify">🔔 Notify Me If The Price Goes Down </h2>
+              <div class="toggle-btn">
+                <input type="checkbox" class="checkbox" id="checkbox" />
+                <label class="sub" id="sub" for="checkbox">
+                  <div class="circle"></div>
+                </label>
+              </div>
+       </div>
+       <div class="canvas">
+    <div class="grid">
+      <div class="grid-item">
+        <div class="card">
+          {% set img1=item[0]["image"] %}
+          <img class="card-img" src="{{img1}}" alt="Rome" />
+          <div class="card-content">
+
+            <!-- <h1 class="card-header">{{item[0]["title"]}}</h1> -->
+           
+            <img
+           class="seller"
+            src="a.png"
+           
+          />
+            <h2>MRP : {{item[0]['price']}}</h2>
+            <button class="card-btn"><a href="{{item[0]['link']}}">Buy now</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card">
+          {% set img2=item[1]["image"] %}
+          <img
+            class="card-img"
+            src="{{img2}}"
+            alt="Grand Canyon"
+          />
+          <div class="card-content">
+           
+            <!-- <h1 class="card-header">{{item[1]["title"]}}</h1> -->
+            <img class="seller"
+           
+            src="s.png"
+           
+          />
+            <h2>MRP : {{item[0]['price']}}</h2>
+            <button class="card-btn"><a href="{{item[1]['link']}}">Buy now</a></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">        <div class="card">
+          
+          <div class="card-content" style="display:list-item; overflow-y: scroll ;">
+            <h1 class="card-header">Add a Review</h1>
+            
+            <p class="card-text">
+
+<div class="rating">
+       <input type="radio" id="star5" name="rating" value="5" />
+       <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+       <input type="radio" id="star4" name="rating" value="4" />
+       <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+       <input type="radio" id="star3" name="rating" value="3" />
+       <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+       <input type="radio" id="star2" name="rating" value="2" />
+       <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+       <input type="radio" id="star1" name="rating" value="1" />
+       <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+     </div>
+              <!-- <div class="rev1">
+                <h3>This bag serves the purpose. Light weight. Enough space. But it do not look nice. Just like other common bags.</h3>              
+              </div>
+              <div class="rev2">
+                <h3>Light and good product</h3>              
+              </div>
+              <div class="rev3">
+                <h3>This bag serves the purpose. Light weight. Enough space. But it do not look nice. Just like other common bags.</h3>              
+              </div><div class="rev4">
+                <h3>This bag serves the purpose. Light weight. Enough space. But it do not look nice. Just like other common bags.</h3>              
+              </div><div class="rev5">
+                <h3>This bag serves the purpose. Light weight. Enough space. But it do not look nice. Just like other common bags.</h3>              
+              </div> -->
+             
+            </p>
+            <textarea name="addreview" class="addreview" style="width:100%; height: 90px;"></textarea>
+          </div>
+          
+          
+         
+            
+          </div>
+          <button>Submit</button>
+        </div>
+
+        </div>
+        
+      </div>
+      <!-- <div class="footer"> Made with ❤️ Team Heisenberg</div> -->
+      
+    </div>
+   
+</div>
+
+  </body>
+</html>

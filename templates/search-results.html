@@ -1,0 +1,170 @@
+<!doctype html>
+<title>CDeal - A Website for Smart Shoppers  </title>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/allproduct.css">  
+    <link rel="stylesheet" href="static/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+    <style>
+        .checked {
+          color: orange;
+        }
+        </style>
+  <body>
+<div class="page-wrapper">
+    <div class="nav-wrapper">
+    <div class="grad-bar"></div>
+    <nav class="navbar">
+      <img src="/static/logo.png" alt="Company Logo">
+      <div class="menu-toggle" id="mobile-menu">
+        
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+     
+
+      <ul class="nav">
+        
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/profile">Dashboard</a></li>
+        
+        
+      </ul>
+    </nav>
+    </div>
+   <br><br>
+ <!-- search bar -->
+ <div class='search_con'>
+          
+
+  
+  <form action ="javascript:route1()" class="input_con">
+    <input type="text" placeholder='{{result}}' spellCheck="False" id="queryFind"/>
+    <span id="clearBtn"><i class="bi bi-x-lg"></i></span>
+    <span class='h-line'></span>
+   
+    <span><i id="myroute"class="bi bi-search"></i></span>
+      </a>
+  </form>
+</div>
+
+     <!-- search bar -->
+     <br><br>
+        {% for item in my_list %}
+       
+        <div class="article-contener">
+          <ul class="groups">
+            <li>
+              <div class="card">
+                <div class="image-session">
+                    {% set myimage =item["image"] %}
+           
+                  <span class="image" style="background-image: url({{myimage}});"></span>
+                </div>
+                <div class="meta-sission">
+                  
+                  <div class="body">
+                    <h3 class="title">{{item["title"]}}</h2>
+                        
+                        <div class="myprice">Rs. 
+                            
+                        
+                            {{item["price"]}}</div>
+                      
+                </div>
+                <h4>    Reviews & Ratings</h4>
+                <div class="views">
+                  
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                   
+                </div>
+                  <div class="footer">
+                 
+                    {% set mylink =item["link"] %}
+                    {% set mytitle =item["title"] %}
+                    {% set myprice =item["price"] %}
+                    
+                    <input type="hidden"  id="d1" value="{{ data }}">
+                    <input type="hidden"  id="d2" value="{{ mytitle }}">
+                    <input type="hidden"  id="d3" value="{{ myprice}}">
+                    <input type="hidden"  id="d4" value="{{ myimage }}">
+
+                     <a href="/product?id={{mylink}}&title={{mytitle}}&price={{myprice}}&image={{myimage}}"  onclick="javascript:singleproduct()" class="button">Compare Deal →</a> 
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+        {% endfor %}
+</div>
+</div>
+<meta id="my_playlist_data" data-playlist="/product?id={{mylink}}&title={{mytitle}}&price={{myprice}}&image={{myimage}}">
+<div class="loading-overlay">
+ 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+ <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_x2lzmtdl.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
+  
+   <center>  <h3 style="color: white;">Comparing Prices From Different Sellers.... </h3></center>
+ 
+ 
+ </div>
+<script>
+
+let overlay = document.getElementsByClassName('loading-overlay')[0]
+
+
+
+document.getElementById('myroute')
+  .addEventListener('click', route1)
+
+ function singleproduct(){
+  overlay.classList.toggle('is-active')
+    // singleroute();
+  }
+
+  function route1() {
+    if(inputArea.value!=""){
+    overlay.classList.toggle('is-active')
+    route2();}
+  }
+  function route2(){
+    const inputArea = document.getElementById("queryFind");
+    const route=inputArea.value.replaceAll(" ", "+");
+   
+      location.href = "./s?search="+route;
+   
+    
+  }
+  $('.menu-toggle').click(function(){
+     $(".nav").toggleClass("mobile-nav");
+     $(this).toggleClass("is-active");
+  });
+  const clearBtn = document.getElementById("clearBtn");
+  const inputArea = document.getElementById("queryFind");
+  
+  clearBtn.addEventListener("click", clear)
+  
+  function clear(){
+    inputArea.value = "";
+  }
+</script>
+      </body>
+
+</html>
+    
+
+</div>
